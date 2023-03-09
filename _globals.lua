@@ -1,0 +1,22 @@
+tile = {}
+tileHeight = 7
+tileWidth = 5
+started = false
+in_menu = false
+players = {[1] = { cards={}, gamescore=0, wins=0}, [2] = { cards={}, gamescore=0, wins=0}}
+board = {}
+currentPlayer = 1
+lastWinner = 0
+handSelectPos = 0
+boardSelectPos = 0
+selectingHand = true
+showCursors = true
+aiThinking = false
+aicoroutine = nil
+bestScore = -32768
+bestBoardPos = -1
+bestCardId = -1
+cur_boardPos = -1
+here = false
+aiFlips = 0
+aiCount = 0
