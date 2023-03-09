@@ -9,8 +9,8 @@ function updateSplash()
         splashPosition = splashPosition + 0.8
     end
 
-    print("copyright", 42, splashPosition, 12)
-    print("graham coulby 2023", 22, splashPosition + 10, 12)
+    print("copyright", 46, splashPosition, 12)
+    print("graham coulby 2023", 28, splashPosition + 10, 12)
     yield()
 end 
 

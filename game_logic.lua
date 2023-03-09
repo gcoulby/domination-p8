@@ -200,7 +200,6 @@ function getAIScore2(cardId, boardPos)
     return score
 end
 
-
 function AI()
     bestScore = INT_MIN
     bestBoardPos = -1

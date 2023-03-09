@@ -3,6 +3,8 @@ tileHeight = 7
 tileWidth = 5
 started = false
 in_menu = false
+in_instructions = false
+instructions_offset = 0
 players = {[1] = { cards={}, gamescore=0, wins=0}, [2] = { cards={}, gamescore=0, wins=0}}
 board = {}
 currentPlayer = 1

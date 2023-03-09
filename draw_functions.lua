@@ -1,5 +1,5 @@
 globalXOffset = 1
-function drawCard(location, position,  card, color, bgColor, yoffset)
+function drawCard(location, position,  card, color, bgColor, yoffset, fillWhite)
     local x = 0
     local y = 0
     if(location == "HAND") then
@@ -32,7 +32,12 @@ function drawCard(location, position,  card, color, bgColor, yoffset)
         printChar(card["values"][3], x+10, y+7, color, bgColor)
         printChar(card["values"][4], x+5, y+14, color, bgColor)
     else
-        rectfill(x, y, x + (tileWidth * 3) - 1, y + (tileHeight*3) - 1, 7)
+        if fillWhite then
+            rectfill(x, y, x + (tileWidth * 3) - 1, y + (tileHeight*3) - 1, 7)
+        else
+            rectfill(x, y, x + (tileWidth * 3) - 1, y + (tileHeight*3) - 1, 3)
+            rect(x, y, x + (tileWidth * 3) - 1, y + (tileHeight*3) - 1, 7)
+        end
     end
     
 end

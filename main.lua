@@ -7,13 +7,40 @@ function _update()
     if(splashShown) then
         startMusic(8)
     end
-    if in_menu then
+    if in_menu and not in_instructions then
         if btnp(4) then
             sfx(59)
             in_menu = false
             newGame()
             
             started = true
+        elseif btnp(5) then
+            sfx(61)
+            instructions_offset = 0
+            in_instructions = true
+        end
+    elseif in_instructions then
+        if btnp(0) then
+            sfx(61)
+            instructions_offset = 0  
+        elseif btnp(1) then
+            sfx(61)
+            instructions_offset = -170  
+        elseif btnp(2) then
+            sfx(61)
+            instructions_offset = instructions_offset + 10
+            if instructions_offset > 0 then
+                instructions_offset = 0
+            end
+        elseif btnp(3) then
+            sfx(61)
+            instructions_offset = instructions_offset - 10
+            if instructions_offset <= -170 then
+                instructions_offset = -170
+            end
+        elseif btnp(5) then
+            sfx(61)
+            in_instructions = false
         end
     elseif currentPlayer == 1 then
         if selectingHand then
@@ -105,13 +132,23 @@ function _draw()
         end        
     else
         if DEBUG_ENABLE then
-            started = true
-            newGame()
+            -- started = true
+            -- newGame()
+            in_menu = true
+            if(in_instructions) then
+                drawInstructions()
+            else
+                drawMenu()
+            end
         else
             coresume(splashScreen)
             if costatus(splashScreen) == "dead" then
                 in_menu = true
-                drawMenu()
+                if(in_instructions) then
+                    drawInstructions()
+                else
+                    drawMenu()
+                end
             end
         end
     end
