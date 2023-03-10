@@ -167,12 +167,18 @@ function drawWinStatus()
     end
 end
 
+function drawOverallScore()
+    print ("score: " .. overallScore, 1, 1, 7)
+    print ("hi-score:" .. dget(0), 56, 1, 7)
+end
+
 function drawGame()
     -- map(0,0)
 
     drawBoard()
     drawScore(1)
     drawScore(2)
+    drawOverallScore() 
     drawCardCount(1)
     drawCardCount(2)
     drawCursors()

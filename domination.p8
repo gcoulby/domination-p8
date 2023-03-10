@@ -1,6 +1,7 @@
 pico-8 cartridge // http://www.pico-8.com
 version 41
 __lua__
+cartdata("gcou_domination")
 #include _debug.lua
 #include _globals.lua
 #include _utils.lua

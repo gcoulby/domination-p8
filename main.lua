@@ -1,6 +1,6 @@
 
 function _init()
-    debugLog("----------------------------------------------------------", "log", true)
+    -- debugLog("----------------------------------------------------------", "log", true)
 end
 
 function _update()
@@ -120,6 +120,7 @@ function _draw()
     if(started) then
         countCards();
         drawGame()
+        calculateScore();
         if isGameOver() then
             if(players[1]["gamescore"] > players[2]["gamescore"]) then
                 sfx(58)

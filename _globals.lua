@@ -22,3 +22,4 @@ cur_boardPos = -1
 here = false
 aiFlips = 0
 aiCount = 0
+overallScore = 0

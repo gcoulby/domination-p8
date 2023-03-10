@@ -51,6 +51,13 @@ function countCards()
     players[2]["gamescore"] = countPlayerCards(2)
 end
 
+function calculateScore()
+    overallScore = players[1]["wins"] - players[2]["wins"]
+    if overallScore > dget(0) then
+        dset(0, overallScore)
+    end
+end
+
 function changePlayers()
     currentPlayer = ternary(currentPlayer == 1, 2, 1)
     selectingHand = true
